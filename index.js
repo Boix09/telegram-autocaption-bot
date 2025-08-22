@@ -73,3 +73,18 @@ bot.on("video", async (ctx) => {
 // Lancement
 bot.launch();
 console.log("Bot lancé (mode polling)");
+
+// --- garder ton code du bot tel quel ---
+
+// Fake web server for Render (to keep free plan alive)
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("Bot is running!");
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Fake server running on port ${PORT}`);
+});
